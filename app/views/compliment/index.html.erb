@@ -7,13 +7,13 @@
 <script type="text/javascript">
   function why_not() {
     $.get('<%= url_for(:action => :ajax_why) %>', function(data) {
-      $('#compliment').html(data+" ");
+      $('#compliment').text(data+" ");
       $('#compliment').typewriter();
     });
   }
   function next_compliment() {
     $.get('<%= url_for(:action => :ajax_compliment) %>', function(data) {
-      $('#compliment').html(data+" ");
+      $('#compliment').text(data+" ");
       $('#compliment').typewriter();
     });
   }

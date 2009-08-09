@@ -1,8 +1,7 @@
 class ComplimentController < ApplicationController
   def index
     @compliment = ComplimentGenerator.full_compliment
-    images = Dir::glob "public/images/backgrounds/**/*.png"
-    @background_image = images.rand.gsub!(/public\/images\//, "")
+    @background_image = rand_background
   end
 
   def ajax_compliment
@@ -17,5 +16,18 @@ class ComplimentController < ApplicationController
       cheering up.
       """
     render :text => why_text
+  end
+
+  def ajax_who
+    server = params[:who] || rand_background
+    @name = File.basename(server, ".png")
+    @what = File.dirname(server).split("/").last
+    render :layout => false
+  end
+
+  private
+  def rand_background
+    images = Dir::glob "public/images/backgrounds/**/*.png"
+    background_image = images.rand.gsub!(/public\/images\//, "")
   end
 end
