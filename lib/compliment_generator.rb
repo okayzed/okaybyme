@@ -28,21 +28,26 @@ class ComplimentGenerator
 
   FORMS =   [
               [:cause, :person, :adj_state],
+              [:cause, :person, :adj_mod, :adj_state],
               [:are, :adj_okay],
               [:are, :adj_mod, :adj],
               [:are, :adj_great],
               [:are, :adj_mod, :adj_great],
             ]
   INTROS =  [
+              "But, ",
               "Did anyone ever tell you that ?",
-              "I overheard someone say that ",
               "Did you know that ?",
-              "Sometimes, I secretly think ",
-              "I never got around to telling you, but ",
               "Earlier I was thinking about you and ",
-              "When I think about you, I think that ",
               "In all sincerity, ",
-              "Thinking about it, !"
+              "I never got around to telling you, but ",
+              "I overheard someone say that ",
+              "Sometimes, I secretly think ",
+              "Thinking about it, !",
+              "This whole time, I've thought that ",
+              "When I think about you, I think that ",
+              [ "One day, ", :obj_tp_pl, "will realize that " ],
+
             ]
 
   FLAIR =
@@ -70,7 +75,7 @@ class ComplimentGenerator
   OBJECTS_FP_SINGLE =
             [ "I", "We", "Others" ]
   OBJECTS_TP_PLURAL =
-            [ "He", "She", "Everyone" ]
+            [ "He", "She", "Everyone", "They" ]
   SUBJECTS =
             [ "me", "him", "her", "everyone", "others" ]
   VERBS_THINKING =
@@ -121,7 +126,6 @@ class ComplimentGenerator
   ADJS_STATE =
             [
               "better",
-              "feel good",
               "happy",
               "jump with joy",
               [ :verb_feel, :adj_great ]
@@ -147,6 +151,7 @@ class ComplimentGenerator
               "'re",
               "have always been",
               "will always be",
+              "are definitely",
             ]
 
   VERBS_FEEL =
@@ -228,6 +233,8 @@ class ComplimentGenerator
             c += "you #{pick_form(VERBS_ARE)} "
           when :cause
             c += "you #{pick_form(VERBS_MAKE)} "
+          when :obj_tp_pl
+            c += "#{pick_form(OBJECTS_TP_PLURAL)} "
           when :person
             c += "#{pick_form(SUBJECTS)} "
           when :verb_i
