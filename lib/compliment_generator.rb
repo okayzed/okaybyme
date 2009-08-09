@@ -110,6 +110,12 @@ class ComplimentGenerator
               "really",
               "very",
               "especially",
+              "quite",
+              "unusually",
+              "totally",
+              "mildly",
+              "truly",
+              "positively",
             ]
 
   ADJS_STATE =
@@ -138,6 +144,9 @@ class ComplimentGenerator
             [
               "can be",
               "are",
+              "'re",
+              "have always been",
+              "will always be",
             ]
 
   VERBS_FEEL =
