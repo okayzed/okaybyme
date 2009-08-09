@@ -1,0 +1,13 @@
+<html>
+<head>
+  <%= yield :head %>
+</head>
+
+<body>
+  <%= yield :header %>
+  <div id="content">
+    <%= yield %>
+  </div>
+  <%= yield :footer %>
+</body>
+</html> 
