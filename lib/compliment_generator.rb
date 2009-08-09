@@ -28,7 +28,6 @@ class ComplimentGenerator
 
   FORMS =   [
               [:cause, :person, :adj_state],
-              [:cause, :person, :adj_mod, :adj_state],
               [:are, :adj_okay],
               [:are, :adj_mod, :adj],
               [:are, :adj_great],
@@ -67,6 +66,9 @@ class ComplimentGenerator
               "it's true",
               "no joke",
               "seriously",
+              "i wouldn't lie to you",
+              "trust me",
+              "you know?",
               [ "I ", :verb_i, "you."],
               [ "and ", :are, :adj, ", too!"],
               [ "and sometimes, ", :are, :adj_mod, :adj, ", too!"],
@@ -98,7 +100,6 @@ class ComplimentGenerator
             ]
   ADJS_GREAT =
             [
-              "bully",
               "dandy",
               "great",
               "groovy",
@@ -106,8 +107,8 @@ class ComplimentGenerator
               "neat",
               "nifty",
               "peachy",
+              "superb",
               "swell",
-              "smashing"
             ]
   ADJS_MOD =
             [
