@@ -88,7 +88,7 @@ class ComplimentGenerator
             [
               "all right",
               "fine",
-              "not bad",
+#              "not bad",
               "okay",
             ]
   ADJS_GREAT =
