@@ -8,6 +8,17 @@
   border: 5px solid #ccc;
 }
 
+#nav a {
+  float: right;
+  display: block;
+  text-decoration: none;
+  padding: 5px;
+}
+
+#nav a:hover {
+
+}
+
 #compliment {
   position: relative;
   left: 500;
