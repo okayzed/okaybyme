@@ -1,6 +1,6 @@
 class ComplimentController < ApplicationController
   def index
-    @compliment = ComplimentGenerator.full_compliment
+    @compliment = ComplimentGenerator.first_compliment
     @background_image = rand_background
   end
 

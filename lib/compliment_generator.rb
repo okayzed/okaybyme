@@ -38,6 +38,9 @@ class ComplimentGenerator
               "Did anyone ever tell you that ?",
               "Did you know that ?",
               "Earlier I was thinking about you and ",
+              "I can't remember when I didn't think that ",
+              "I forgot to mention it before, but ",
+              "I hope I'm not repeating myself, but ",
               "In all sincerity, ",
               "I never got around to telling you, but ",
               "I overheard someone say that ",
@@ -69,6 +72,8 @@ class ComplimentGenerator
               "i wouldn't lie to you",
               "trust me",
               "you know?",
+              "you've inspired me",
+              "you're my hero",
               [ "I ", :verb_i, "you."],
               [ "and ", :are, :adj, ", too!"],
               [ "and sometimes, ", :are, :adj_mod, :adj, ", too!"],
@@ -85,6 +90,7 @@ class ComplimentGenerator
               "think",
               "know",
               "believe",
+              "can tell",
             ]
 
   ADJS_COOL = [
@@ -100,6 +106,7 @@ class ComplimentGenerator
             ]
   ADJS_GREAT =
             [
+              "charming",
               "dandy",
               "great",
               "groovy",
@@ -180,6 +187,21 @@ class ComplimentGenerator
   def self.followup
     puts "followup"
     parse_form(FOLLOWUPS.rand)
+  end
+
+  # the first compliment doesn't have an intro.
+  def self.first_compliment
+    c = ""
+    c += compliment
+    c = "#{end_sentence(c)} "
+    c += " #{flair} " if rand > 0.85
+    # Add a followup and some flair, 1/4 of the time
+    if rand > 0.75
+      c += end_sentence(followup)
+      c += " #{flair} " if rand > 0.85
+    end
+    c.strip
+
   end
 
   def self.full_compliment
