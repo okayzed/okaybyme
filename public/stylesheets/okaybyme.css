@@ -10,20 +10,28 @@
 #content {
   background-repeat: no-repeat;
   background-position: top center;
-  width: 800;
-  height: 600;
+  width: 800px;
+  height: 600px;
   margin: auto;
 
-  border: 5px solid #ccc;
 }
 
 #nav a {
-  float: right;
-  display: block;
   text-decoration: none;
   padding: 5px;
+  font-size: 150%;
 }
 
-#nav a:hover {
-
+#nav #why {
+  float: right;
+}
+#nav #more {
+  position: relative;
+  top: 50px;
+  left: 500px;
+}
+#nav #evolve {
+  position: absolute;
+  top: 500px;
+  left: 25px;
 }
