@@ -9,6 +9,14 @@ class ComplimentController < ApplicationController
     render :text => compliment
   end
 
+  def ajax_okay
+    okay_text =
+      """
+        you are okay by me.
+      """
+    render :text => okay_text
+  end
+
   def ajax_why
     why_text =
       """

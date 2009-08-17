@@ -1,6 +1,10 @@
+.invisible {
+  display: none;
+}
+
 #compliment {
   position: relative;
-  left: 500;
+  left: 525;
   top: 100;
   width: 275px;
   font-family: monospace;
@@ -22,16 +26,22 @@
   font-size: 150%;
 }
 
-#nav #why {
-  float: right;
+#nav #evolve {
+  position: absolute;
+  top: 600px;
+  right: 100px;
 }
-#nav #more {
+#nav #why {
   position: relative;
   top: 50px;
   left: 500px;
 }
-#nav #evolve {
+#nav #what {
   position: absolute;
   top: 500px;
   left: 25px;
+}
+#nav #okay {
+  position: relative;
+  left: 750px;
 }
